@@ -291,7 +291,7 @@ let
 
                 # The SYSROOT is determined by using the librustc_driver-*.so.
                 # So, we need to point to the *.so files in our derivation.
-                chmod u+w $target
+                chmod u+w $target || true
                 patchelf --set-rpath "$out/lib" $target || true
               done
 
